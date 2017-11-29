@@ -1,0 +1,9 @@
+<% if @category.errors.any? %>
+$("#errorMsg").show();
+$("#errorMsg").html("<%= escape_javascript render 'errors' %>");
+<% else %>
+$("#addcategory").modal('hide');
+$("#errorMsg").hide();
+//$("#new_category").reset();
+$("#listCategories").append("<%= escape_javascript render 'category' %>");
+<% end %>
